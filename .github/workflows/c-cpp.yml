@@ -1,28 +1,16 @@
-name: Generate Doxygen Docs
+name: Doxygen GitHub Pages Deploy Action
 
 on:
   push:
     branches:
-      - main  # ←監視するブランチに合わせて変更
-  workflow_dispatch:
-    branches:
-      - main  # ←監視するブランチに合わせて変更
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install Doxygen
-        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
-
-      - name: Generate Doxygen documentation
-        run: doxygen ./GitTest/Doxyfile
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/html   # DoxyfileのOUTPUT_DIRECTORYにあわせて変更
