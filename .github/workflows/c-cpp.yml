@@ -3,7 +3,7 @@ name: Generate Doxygen Docs
 on:
   push:
     branches:
-      - main  # ←監視するブランチに合わせて変更
+      - master  # ←監視するブランチに合わせて変更
 
 jobs:
   build:
