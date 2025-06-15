@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main  # ←監視するブランチに合わせて変更
+  workflow_dispatch:
+    branches:
+      - main  # ←監視するブランチに合わせて変更
 
 jobs:
   build:
