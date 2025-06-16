@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "My", "index.html", ]
+  [ "asuobwc", "index.html", ]
 ];
 
 var NAVTREEINDEX =
